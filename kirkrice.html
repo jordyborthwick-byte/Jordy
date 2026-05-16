@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kirk Rice LLP — Chartered Accountants & Financial Advisers, Fleet</title>
+<meta name="description" content="Kirk Rice LLP — award-winning chartered accountants and financial advisers based in Fleet, Hampshire. 5★ rated, trusted by businesses and individuals for over a decade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #142236;
+    --navy-light: #1e3353;
+    --gold: #c9a84c;
+    --gold-light: #e2c47a;
+    --gold-pale: #f5edd8;
+    --cream: #faf8f4;
+    --white: #ffffff;
+    --text: #2a2a2a;
+    --text-mid: #4a4a55;
+    --text-soft: #7a7a8a;
+    --border: rgba(201,168,76,0.18);
+    --glass: rgba(255,255,255,0.06);
+    --shadow-gold: 0 8px 40px rgba(201,168,76,0.15);
+    --shadow-deep: 0 20px 80px rgba(13,27,42,0.25);
+    --radius: 4px;
+    --radius-lg: 12px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.65;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+
+  /* ─── UTILITY ─── */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 50px;
+    background: rgba(201,168,76,0.07);
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 18px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-mid);
+    max-width: 560px;
+    line-height: 1.8;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.15);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .btn-primary:hover::after { transform: scaleX(1); }
+  .btn-primary:hover { box-shadow: 0 8px 30px rgba(201,168,76,0.4); transform: translateY(-2px); }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 15px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin: 20px 0 28px;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0 32px;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(13,27,42,0.97);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  }
+  .nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+  }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+  .logo-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  .logo-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-top: 3px;
+  }
+  .logo-accent { color: var(--gold); }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.2s;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    font-weight: 500 !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    transition: box-shadow 0.3s ease, transform 0.2s ease !important;
+  }
+  .nav-cta:hover { box-shadow: 0 4px 20px rgba(201,168,76,0.4) !important; transform: translateY(-1px) !important; }
+  .nav-cta::after { display: none !important; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px; height: 1.5px;
+    background: var(--white);
+    transition: all 0.3s ease;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--navy) 0%, #091520 50%, #0d1f35 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 800px 600px at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 400px at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 120px 0 80px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 8px 18px 8px 12px;
+    margin-bottom: 28px;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+  .hero-badge-text {
+    font-size: 0.72rem;
+    color: var(--gold-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-title .line-indent { display: block; padding-left: 60px; }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .trust-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .trust-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.06em;
+    line-height: 1.3;
+  }
+  .trust-sep {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.1);
+  }
+  .hero-visual {
+    position: relative;
+  }
+  .hero-card-main {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card-main::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .stars-row {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+  .star { color: var(--gold); font-size: 1.1rem; }
+  .review-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .review-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 1rem;
+  }
+  .review-name {
+    font-weight: 500;
+    color: var(--white);
+    font-size: 0.9rem;
+  }
+  .review-since {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+  }
+  .hero-stat-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .hero-stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.06em;
+  }
+  .floating-badge {
+    position: absolute;
+    top: -20px; right: -20px;
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 50%;
+    width: 80px; height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+    animation: float 3s ease-in-out infinite;
+  }
+  .floating-badge .fb-num {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .floating-badge .fb-sub {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ─── ABOUT ─── */
+  #about {
+    padding: 120px 0;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  #about::before {
+    content: 'ABOUT';
+    position: absolute;
+    right: -20px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18vw;
+    font-weight: 700;
+    color: rgba(13,27,42,0.03);
+    pointer-events: none;
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-image-wrap {
+    position: relative;
+  }
+  .about-img-frame {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: linear-gradient(160deg, var(--navy-light) 0%, var(--navy) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-img-placeholder {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(160deg, rgba(201,168,76,0.15) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(201,168,76,0.2)'/%3E%3C/svg%3E") repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .building-icon {
+    font-size: 5rem;
+    opacity: 0.3;
+  }
+  .about-img-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 32px;
+    background: linear-gradient(0deg, rgba(13,27,42,0.9) 0%, transparent 100%);
+  }
+  .about-overlay-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-style: italic;
+  }
+  .about-corner-accent {
+    position: absolute;
+    bottom: -16px; right: -16px;
+    width: 80px; height: 80px;
+    border: 2px solid var(--gold);
+    border-radius: var(--radius);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .about-top-accent {
+    position: absolute;
+    top: -16px; left: -16px;
+    width: 60px; height: 60px;
+    border: 2px solid var(--gold);
+    border-radius: var(--radius);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .values-list {
+    list-style: none;
+    margin-top: 32px;
+  }
+  .values-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(13,27,42,0.07);
+  }
+  .values-list li:first-child { border-top: 1px solid rgba(13,27,42,0.07); }
+  .value-icon {
+    width: 40px; height: 40px;
+    min-width: 40px;
+    border-radius: 8px;
+    background: var(--gold-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-top: 2px;
+  }
+  .value-text h4 {
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+  .value-text p {
+    font-size: 0.875rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  /* ─── SERVICES ─── */
+  #services {
+    padding: 120px 0;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+  .services-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 600px 600px at 90% 50%, rgba(201,168,76,0.05) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 400px at 10% 20%, rgba(201,168,76,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .services-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .services-header .section-title { color: var(--white); }
+  .services-header .section-sub { color: rgba(255,255,255,0.5); margin: 0 auto; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(201,168,76,0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon-wrap {
+    width: 52px; height: 52px;
+    border-radius: 10px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+    transition: background 0.3s;
+  }
+  .service-card:hover .service-icon-wrap {
+    background: rgba(201,168,76,0.18);
+  }
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .service-card p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.75;
+  }
+  .service-card .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: 500;
+    transition: gap 0.2s;
+  }
+  .service-card:hover .service-link { gap: 10px; }
+  .service-card.featured {
+    background: linear-gradient(150deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04));
+    border-color: rgba(201,168,76,0.3);
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials {
+    padding: 120px 0;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonials-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .google-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    border: 1px solid rgba(13,27,42,0.08);
+    border-radius: 8px;
+    padding: 14px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .google-g {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4285f4, #ea4335, #fbbc05, #34a853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .google-info { line-height: 1.3; }
+  .google-score {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .google-total {
+    font-size: 0.75rem;
+    color: var(--text-soft);
+  }
+  .google-stars { display: flex; gap: 2px; }
+  .google-stars .star { font-size: 0.85rem; color: #fbbc05; }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--white);
+    border: 1px solid rgba(13,27,42,0.07);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    transition: all 0.35s ease;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 20px; right: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.12;
+    line-height: 1;
+    font-style: italic;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 50px rgba(13,27,42,0.1);
+    border-color: rgba(201,168,76,0.25);
+  }
+  .t-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 20px;
+  }
+  .t-stars .star { color: #fbbc05; font-size: 0.9rem; }
+  .t-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+  .t-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(13,27,42,0.07);
+  }
+  .t-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .t-name {
+    font-weight: 500;
+    color: var(--navy);
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  .t-meta { font-size: 0.75rem; color: var(--text-soft); }
+
+  /* ─── WHY CHOOSE US ─── */
+  #why {
+    padding: 120px 0;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .why-content .section-title { color: var(--white); }
+  .why-content .section-sub { color: rgba(255,255,255,0.5); }
+  .why-features {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .why-feature {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .wf-icon {
+    width: 48px; height: 48px;
+    min-width: 48px;
+    border-radius: 10px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  .wf-text h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .wf-text p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+  }
+  .why-visual {
+    position: relative;
+  }
+  .why-visual-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-visual-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .why-big-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.9;
+    display: block;
+  }
+  .why-big-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    display: block;
+    margin-top: 8px;
+  }
+  .why-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 32px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .why-metric {
+    background: rgba(255,255,255,0.03);
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .wm-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .wm-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── GALLERY ─── */
+  #gallery {
+    padding: 120px 0;
+    background: var(--cream);
+  }
+  .gallery-header { margin-bottom: 56px; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+  .gallery-item {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background: var(--navy-mid);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, transparent 40%, rgba(13,27,42,0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .gallery-item:hover::after { opacity: 1; }
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 28px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 2;
+  }
+  .gallery-item:hover .gallery-overlay { transform: translateY(0); opacity: 1; }
+  .gallery-overlay-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--white);
+    font-style: italic;
+  }
+  .gallery-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .gp-icon { font-size: 2.5rem; opacity: 0.25; }
+  .gp-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+  .gallery-item:nth-child(1) { background: linear-gradient(135deg, #0d1b2a 0%, #1e3353 100%); }
+  .gallery-item:nth-child(2) { background: linear-gradient(135deg, #142236 0%, #0d1b2a 100%); }
+  .gallery-item:nth-child(3) { background: linear-gradient(135deg, #1a2f48 0%, #0d1b2a 100%); }
+  .gallery-item:nth-child(4) { background: linear-gradient(135deg, #0f2035 0%, #142236 100%); }
+  .gallery-item:nth-child(5) { background: linear-gradient(135deg, #1e3353 0%, #0d1b2a 100%); }
+  .gallery-gold-accent {
+    position: absolute;
+    width: 80px; height: 80px;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    padding: 120px 0;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 700px 500px at 0% 100%, rgba(201,168,76,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact-info .section-title { color: var(--white); }
+  .contact-info .section-sub { color: rgba(255,255,255,0.5); }
+  .contact-details {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .cd-icon {
+    width: 44px; height: 44px;
+    min-width: 44px;
+    border-radius: 8px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .cd-info label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .cd-info p, .cd-info a {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s;
+    line-height: 1.5;
+  }
+  .cd-info a:hover { color: var(--gold); }
+  .contact-form-wrap {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-form-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+  .form-group label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-weight: 500;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    width: 100%;
+  }
+  .form-group select option { background: var(--navy); }
+  .form-group textarea { min-height: 110px; resize: vertical; }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.04);
+  }
+  .form-submit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .form-disclaimer {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.5;
+  }
+  .map-embed {
+    margin-top: 48px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 220px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .map-placeholder {
+    text-align: center;
+    color: rgba(255,255,255,0.3);
+  }
+  .map-placeholder .map-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+  .map-placeholder p { font-size: 0.8rem; }
+  .map-placeholder a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-top: 6px;
+    display: block;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #060e16;
+    padding: 72px 0 32px;
+    position: relative;
+  }
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.3;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-brand p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.75;
+    margin-top: 16px;
+    max-width: 260px;
+  }
+  .footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .social-link {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.4);
+    transition: all 0.3s;
+  }
+  .social-link:hover {
+    background: rgba(201,168,76,0.15);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .footer-col h5 {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: rgba(255,255,255,0.8); }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-bottom p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.2);
+  }
+  .footer-bottom a {
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-bottom a:hover { color: var(--gold); }
+  .footer-links { display: flex; gap: 24px; }
+
+  /* ─── ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 100px 0 60px; }
+    .hero-visual { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-image-wrap { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; gap: 48px; }
+    .why-visual { display: none; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .container { padding: 0 20px; }
+    .hero-title .line-indent { padding-left: 0; }
+    .hero-trust { gap: 16px; }
+    .contact-form-wrap { padding: 32px 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .hero-stat-cards { grid-template-columns: 1fr 1fr; }
+    .testimonials-header { flex-direction: column; align-items: flex-start; }
+    .footer-bottom { flex-direction: column; gap: 12px; }
+  }
+
+  /* Nav mobile overlay */
+  .nav-mobile {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(13,27,42,0.98);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-mobile a:hover { color: var(--gold); }
+  .nav-mobile-close {
+    position: absolute;
+    top: 24px; right: 32px;
+    font-size: 2rem;
+    color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+  }
+
+  /* Success message */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 32px;
+    color: var(--white);
+  }
+  .form-success.shown { display: block; }
+  .success-icon { font-size: 3rem; margin-bottom: 16px; }
+  .form-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-name">Kirk<span class="logo-accent"> Rice</span></span>
+      <span class="logo-sub">Chartered Accountants &amp; Advisers</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#gallery">Team</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="navMobile">
+  <button class="nav-mobile-close" id="navClose">×</button>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#testimonials" onclick="closeMobileNav()">Reviews</a>
+  <a href="#gallery" onclick="closeMobileNav()">Team</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span class="hero-badge-text">Fleet's Most Trusted Accountants — 5.0 ★ Google Rating</span>
+        </div>
+        <h1 class="hero-title">
+          Expert Advice,<br>
+          <em>Exceptional</em>
+          <span class="line-indent">Results.</span>
+        </h1>
+        <p class="hero-sub">
+          Kirk Rice LLP has delivered trusted accountancy and financial planning for businesses and individuals across Hampshire and beyond — with the precision, clarity, and personal care you deserve.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Book a Free Consultation <span>→</span></a>
+          <a href="#services" class="btn-outline">Our Services</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="trust-num">5.0</span>
+            <span class="trust-label">Google<br>Rating</span>
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <span class="trust-num">33+</span>
+            <span class="trust-label">Verified<br>Reviews</span>
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <span class="trust-num">13+</span>
+            <span class="trust-label">Years<br>Trusted</span>
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <span class="trust-num">ICAEW</span>
+            <span class="trust-label">Chartered<br>Accountants</span>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT -->
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <div class="floating-badge">
+            <span class="fb-num">5.0</span>
+            <span class="fb-sub">Stars</span>
+          </div>
+          <div class="stars-row">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="review-quote">"I have been a business client of Kirk Rice LLP for 13 years. I am very pleased with the services provided and will continue to use their services for the foreseeable."</p>
+          <div class="review-author">
+            <div class="review-avatar">JB</div>
+            <div>
+              <p class="review-name">Julian Barrow</p>
+              <p class="review-since">Business Client · 13 Years</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-stat-cards">
+          <div class="hero-stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Client Retention</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-num">ICAEW</div>
+            <div class="stat-label">Regulated & Chartered</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-num">Fleet</div>
+            <div class="stat-label">Hampshire — Local Experts</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Dedicated Departments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <div class="about-img-frame">
+          <div class="about-img-placeholder">
+            <span class="building-icon">🏛</span>
+          </div>
+          <div class="about-img-overlay">
+            <p class="about-overlay-text">Victoria House, Fleet, Hampshire</p>
+          </div>
+        </div>
+        <div class="about-corner-accent"></div>
+        <div class="about-top-accent"></div>
+      </div>
+      <div class="about-right reveal reveal-delay-2">
+        <span class="tag">About Kirk Rice LLP</span>
+        <h2 class="section-title">More Than Numbers — <em>A True Partnership</em></h2>
+        <div class="divider"></div>
+        <p class="section-sub">
+          Based at Victoria House in Fleet, Hampshire, Kirk Rice LLP is a full-service chartered accountancy and financial advisory practice. We serve growing businesses, entrepreneurs, and individuals who expect more than compliance — they expect clarity, strategy, and genuine care.
+        </p>
+        <ul class="values-list">
+          <li>
+            <div class="value-icon">🎯</div>
+            <div class="value-text">
+              <h4>Precision You Can Rely On</h4>
+              <p>We believe accuracy is non-negotiable. Every figure, filing, and financial strategy is handled with meticulous attention to detail.</p>
+            </div>
+          </li>
+          <li>
+            <div class="value-icon">🤝</div>
+            <div class="value-text">
+              <h4>Long-Term Client Relationships</h4>
+              <p>Our clients don't just stay — they thrive. With partnerships spanning over a decade, we're invested in your continued success.</p>
+            </div>
+          </li>
+          <li>
+            <div class="value-icon">🌱</div>
+            <div class="value-text">
+              <h4>Proactive, Not Reactive</h4>
+              <p>From HMRC readiness to tax planning, we anticipate challenges before they arise — so you're always a step ahead.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-bg"></div>
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="tag" style="color:var(--gold);">What We Do</span>
+      <h2 class="section-title" style="color:var(--white);">Comprehensive Financial <em>Services</em></h2>
+      <p class="section-sub">Two specialist departments — Accounting and Financial Services — working seamlessly to protect and grow your wealth.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card featured reveal reveal-delay-1">
+        <div class="service-icon-wrap">📊</div>
+        <h3>Accounts & Tax Compliance</h3>
+        <p>Annual accounts preparation, corporation tax returns, self-assessment, and all statutory filings handled accurately and on time — every time.</p>
+        <a href="#contact" class="service-link">Enquire now →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon-wrap">📋</div>
+        <h3>Business Advisory</h3>
+        <p>Strategic financial guidance to help you make informed decisions, improve profitability, and plan for sustainable growth with confidence.</p>
+        <a href="#contact" class="service-link">Enquire now →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon-wrap">🏦</div>
+        <h3>Financial Planning & Wealth</h3>
+        <p>Personalised financial planning — from pensions and investments to protection and retirement strategies — tailored to your life goals.</p>
+        <a href="#contact" class="service-link">Enquire now →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon-wrap">💼</div>
+        <h3>Payroll & Bookkeeping</h3>
+        <p>Efficient, accurate payroll management and bookkeeping services that free up your time and keep your records immaculate.</p>
+        <a href="#contact" class="service-link">Enquire now →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon-wrap">🔍</div>
+        <h3>HMRC Investigations & Compliance</h3>
+        <p>Experienced, calm representation during HMRC enquiries and investigations. We prepare, protect, and advocate for you throughout the process.</p>
+        <a href="#contact" class="service-link">Enquire now →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-icon-wrap">🌐</div>
+        <h3>VAT & Making Tax Digital</h3>
+        <p>Full VAT return management and MTD-compliant systems to keep your business fully digital, compliant, and future-proof.</p>
+        <a href="#contact" class="service-link">Enquire now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div>
+        <span class="tag">Client Reviews</span>
+        <h2 class="section-title">What Our Clients <em>Say</em></h2>
+      </div>
+      <div class="google-badge">
+        <span class="google-g">G</span>
+        <div class="google-info">
+          <div class="google-score">5.0 <span class="google-total">— 33 reviews</span></div>
+          <div class="google-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"I have been a business client of Kirk Rice LLP for 13 years. I am very pleased with the services provided and will continue to use their services for the foreseeable. I have worked with both their accounting and financial services departments very happily."</p>
+        <div class="t-footer">
+          <div class="t-avatar">JB</div>
+          <div>
+            <p class="t-name">Julian Barrow</p>
+            <p class="t-meta">Business Client · 13 Years</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Gauhar was very helpful, efficient especially with reminders when I hadn't sent the information requested. Would highly recommend Kirk Rice — a professional and attentive team."</p>
+        <div class="t-footer">
+          <div class="t-avatar">AN</div>
+          <div>
+            <p class="t-name">Anita</p>
+            <p class="t-meta">Personal Tax Client</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"I've been thoroughly impressed with the professionalism and expertise of Kirk Rice. Their attention to detail and commitment to ensuring everything is managed accurately have been invaluable. Nicola, James &amp; team have been exceptional."</p>
+        <div class="t-footer">
+          <div class="t-avatar">KO</div>
+          <div>
+            <p class="t-name">Kate Odwyer</p>
+            <p class="t-meta">Business Client</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Always completely helpful, I would have no hesitation recommending Kirk Rice LLP to anyone looking for accountancy or financial services. The team truly goes above and beyond."</p>
+        <div class="t-footer">
+          <div class="t-avatar">PH</div>
+          <div>
+            <p class="t-name">Peter H.</p>
+            <p class="t-meta">Long-standing Client</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"I would highly recommend the services of Kirk Rice LLP. They handle my personal tax affairs with total competence and always respond promptly. It's a pleasure to deal with such a professional firm."</p>
+        <div class="t-footer">
+          <div class="t-avatar">SR</div>
+          <div>
+            <p class="t-name">Sarah R.</p>
+            <p class="t-meta">Personal Tax Client</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-4">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Kirk Rice provide an exceptional, personal service. Their team is knowledgeable, friendly, and always available when needed. I have complete confidence that my accounts are in the best possible hands."</p>
+        <div class="t-footer">
+          <div class="t-avatar">MW</div>
+          <div>
+            <p class="t-name">Mark W.</p>
+            <p class="t-meta">SME Business Owner</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-content reveal">
+        <span class="tag">Why Kirk Rice</span>
+        <h2 class="section-title" style="color:var(--white);">The Standard Every <em>Client</em> Deserves</h2>
+        <div class="divider"></div>
+        <p class="section-sub" style="color:rgba(255,255,255,0.5);">
+          Not all accountancy firms are equal. We hold ourselves to the highest standards of quality, transparency, and responsiveness — because your finances deserve nothing less.
+        </p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="wf-icon">⭐</div>
+            <div class="wf-text">
+              <h4>Perfect 5-Star Rating</h4>
+              <p>Every single review is five stars — not by chance, but because we genuinely care about the experience we deliver.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="wf-icon">🛡</div>
+            <div class="wf-text">
+              <h4>ICAEW Regulated & Chartered</h4>
+              <p>Kirk Rice LLP is fully regulated by the Institute of Chartered Accountants in England and Wales — your assurance of professional and ethical standards.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="wf-icon">⚡</div>
+            <div class="wf-text">
+              <h4>Responsive & Proactive</h4>
+              <p>We respond quickly, communicate clearly, and flag issues before they become problems — so you're never left in the dark.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="wf-icon">🤝</div>
+            <div class="wf-text">
+              <h4>Dedicated Named Advisers</h4>
+              <p>You'll work with the same experts throughout — not a different face each time. Real relationships built on trust and continuity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual reveal reveal-delay-3">
+        <div class="why-visual-card">
+          <span class="why-big-num">5.0</span>
+          <span class="why-big-label">Google Rating — Perfect Score</span>
+          <div class="why-metrics">
+            <div class="why-metric">
+              <span class="wm-num">33+</span>
+              <span class="wm-label">Verified Reviews</span>
+            </div>
+            <div class="why-metric">
+              <span class="wm-num">13+</span>
+              <span class="wm-label">Years Trusted</span>
+            </div>
+            <div class="why-metric">
+              <span class="wm-num">2</span>
+              <span class="wm-label">Expert Departments</span>
+            </div>
+            <div class="why-metric">
+              <span class="wm-num">100%</span>
+              <span class="wm-label">5-Star Reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <span class="tag">Our Team &amp; Practice</span>
+      <h2 class="section-title">The People Behind <em>Your Success</em></h2>
+      <div class="divider"></div>
+      <p class="section-sub">Experienced chartered accountants and financial advisers dedicated to building lasting client relationships grounded in expertise and trust.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall reveal">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">🏛</span>
+          <span class="gp-label">Victoria House, Fleet</span>
+        </div>
+        <div class="gallery-gold-accent"></div>
+        <div class="gallery-overlay">
+          <p class="gallery-overlay-title">Our Home — Victoria House, Fleet</p>
+        </div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">👔</span>
+          <span class="gp-label">Accounting Team</span>
+        </div>
+        <div class="gallery-overlay">
+          <p class="gallery-overlay-title">Accounting &amp; Tax Team</p>
+        </div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">📈</span>
+          <span class="gp-label">Financial Services</span>
+        </div>
+        <div class="gallery-overlay">
+          <p class="gallery-overlay-title">Financial Planning Department</p>
+        </div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">🤝</span>
+          <span class="gp-label">Client Meetings</span>
+        </div>
+        <div class="gallery-overlay">
+          <p class="gallery-overlay-title">Personal Advisory Sessions</p>
+        </div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-3">
+        <div class="gallery-placeholder">
+          <span class="gp-icon">💻</span>
+          <span class="gp-label">Modern Practice</span>
+        </div>
+        <div class="gallery-overlay">
+          <p class="gallery-overlay-title">Technology-Forward Approach</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-bg"></div>
+  <div class="container">
+    <div class="contact-grid">
+      <!-- LEFT -->
+      <div class="contact-info reveal">
+        <span class="tag">Get in Touch</span>
+        <h2 class="section-title" style="color:var(--white);">Start Your <em>Conversation</em> With Us</h2>
+        <div class="divider"></div>
+        <p class="section-sub" style="color:rgba(255,255,255,0.5);">Whether you're a new business, a growing company, or an individual with personal tax needs — we'd love to hear from you. All initial consultations are complimentary.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="cd-icon">📍</div>
+            <div class="cd-info">
+              <label>Our Office</label>
+              <p>Victoria House, 178–180 Fleet Road<br>Fleet, Hampshire, GU51 4DA</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">📞</div>
+            <div class="cd-info">
+              <label>Telephone</label>
+              <a href="tel:01252960500">01252 960500</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">🌐</div>
+            <div class="cd-info">
+              <label>Website</label>
+              <a href="https://www.kirkrice.co.uk" target="_blank" rel="noopener">www.kirkrice.co.uk</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">🕒</div>
+            <div class="cd-info">
+              <label>Opening Hours</label>
+              <p>Monday – Friday: 9:00am – 5:30pm<br>Saturday &amp; Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <div class="map-placeholder">
+            <span class="map-icon">🗺</span>
+            <p>Victoria House, Fleet Road, Fleet</p>
+            <a href="https://maps.google.com/?q=Kirk+Rice+LLP+Fleet+Road+Fleet+GU51+4DA" target="_blank" rel="noopener">View on Google Maps →</a>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT: FORM -->
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <h3 class="form-title">Send Us a Message</h3>
+        <div id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="James" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Wilson" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="james@company.co.uk" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="07700 000000" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Interested In</label>
+            <select id="service">
+              <option value="" disabled selected>Select a service…</option>
+              <option>Accounts &amp; Tax Compliance</option>
+              <option>Business Advisory</option>
+              <option>Financial Planning &amp; Wealth</option>
+              <option>Payroll &amp; Bookkeeping</option>
+              <option>HMRC Investigation Support</option>
+              <option>VAT &amp; Making Tax Digital</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" placeholder="Tell us a little about what you need…"></textarea>
+          </div>
+          <div class="form-submit-row">
+            <p class="form-disclaimer">Your information is kept strictly confidential and never shared with third parties.</p>
+            <button class="btn-primary" onclick="submitForm()">Send Message →</button>
+          </div>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✓</div>
+          <h3>Message Received</h3>
+          <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;margin-top:8px;">Thank you for reaching out. A member of the Kirk Rice team will be in touch within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="text-decoration:none;">
+          <span class="logo-name" style="font-size:1.6rem;">Kirk<span class="logo-accent"> Rice</span></span>
+          <span class="logo-sub" style="font-size:0.6rem;display:block;margin-top:4px;">Chartered Accountants &amp; Financial Advisers</span>
+        </a>
+        <p>Trusted by businesses and individuals across Fleet and Hampshire since our founding. Regulated by ICAEW, committed to your success.</p>
+        <div class="footer-social">
+          <a href="https://www.kirkrice.co.uk" class="social-link" title="Website" target="_blank" rel="noopener" aria-label="Website">🌐</a>
+          <a href="https://www.linkedin.com" class="social-link" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="tel:01252960500" class="social-link" title="Call Us" aria-label="Phone">📞</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Accounts &amp; Tax</a></li>
+          <li><a href="#services">Business Advisory</a></li>
+          <li><a href="#services">Financial Planning</a></li>
+          <li><a href="#services">Payroll &amp; Bookkeeping</a></li>
+          <li><a href="#services">HMRC Support</a></li>
+          <li><a href="#services">VAT &amp; MTD</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#testimonials">Client Reviews</a></li>
+          <li><a href="#gallery">Our Team</a></li>
+          <li><a href="https://www.kirkrice.co.uk/blog" target="_blank" rel="noopener">Blog &amp; Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:01252960500">01252 960500</a></li>
+          <li><a href="https://www.kirkrice.co.uk" target="_blank" rel="noopener">kirkrice.co.uk</a></li>
+          <li><a href="#">Victoria House</a></li>
+          <li><a href="#">178–180 Fleet Road</a></li>
+          <li><a href="#">Fleet, GU51 4DA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Kirk Rice LLP. All rights reserved. Registered in England &amp; Wales. Regulated by ICAEW.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+  // Init scrolled on load
+  if (window.scrollY > 40) navbar.classList.add('scrolled');
+  else navbar.classList.add('scrolled'); // Always dark for readability
+
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navMobile').classList.add('open');
+  });
+  document.getElementById('navClose').addEventListener('click', () => {
+    document.getElementById('navMobile').classList.remove('open');
+  });
+  function closeMobileNav() {
+    document.getElementById('navMobile').classList.remove('open');
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Form submit
+  function submitForm() {
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!fname || !email) {
+      alert('Please fill in at least your name and email address.');
+      return;
+    }
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('shown');
+  }
+
+  // Smooth anchor scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
